@@ -1,17 +1,139 @@
-a {
-  text-decoration: none !important;
-  color: inherit !important;
+/* ------------------------ Header Styling ------------------------ */
+.header {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+  margin: 20px 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
-/* Scroll bar */
-body::-webkit-scrollbar {
-  width: 5px;
-}
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+/* ------------------------ Navigation Styling ------------------------ */
+.nav {
+  display: flex;
+  list-style: none;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #1a1a1a; /* Dark background */
+  height: 80px;
+  margin-top: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
 }
 
-body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+.nav > li {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.nav > li:hover {
+  color: #00bcd4; /* Turquoise color */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+/* ------------------------ Product Container Styling ------------------------ */
+.productContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 30px;
+  gap: 20px; /* Adds space between the items */
+}
+
+.products {
+  width: 22%; /* Slightly reduced width for better spacing */
+  padding: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px; /* Rounded corners */
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  background-color: #fff; /* White background for products */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.products:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover; /* Ensures the image covers the space properly */
+  border-radius: 10px; /* Rounded corners for images */
+}
+
+.productDesc {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #555;
+  font-weight: 600;
+}
+
+.add, .remove {
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add {
+  background-color: #4caf50; /* Green for add */
+  color: white;
+}
+
+.add:hover {
+  background-color: #45a049; /* Darker green on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.remove {
+  background-color: #f44336; /* Red for remove */
+  color: white;
+}
+
+.remove:hover {
+  background-color: #e53935; /* Darker red on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}
+
+/* ------------------------ Responsive Design ------------------------ */
+@media (max-width: 768px) {
+  .productContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .products {
+    width: 80%; /* Full width for smaller screens */
+  }
+
+  .nav > li {
+    font-size: 16px; /* Smaller font size for navigation on smaller screens */
+  }
+
+  .header {
+    font-size: 28px; /* Slightly smaller header font size */
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    flex-direction: column;
+    height: auto; /* Allow navigation to stack vertically */
+  }
+
+  .nav > li {
+    margin: 10px 0;
+  }
 }
